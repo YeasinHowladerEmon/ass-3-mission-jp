@@ -1,6 +1,7 @@
 Sports Facility Booking API
 Overview
 This project provides a RESTful API for managing sports facility bookings. Users can sign up, log in, create and view bookings, and admins can manage facilities and view all bookings.
+here's my live link => https://sports-facility-backend-kappa.vercel.app/
 
 Project Setup and Running Instructions
 Prerequisites
@@ -32,9 +33,7 @@ Start the Server:
 
 
 
-npm start
-# or
-yarn start
+npm run start-dev
 The server should now be running on http://localhost:3000.
 
 API Endpoints
