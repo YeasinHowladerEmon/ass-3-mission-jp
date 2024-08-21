@@ -43,7 +43,7 @@ User Routes
 Route: POST /api/auth/signup
 Request Body:
 json
-Copy code
+
 {
   "name": "Programming Hero",
   "email": "web@programming-hero.com",
@@ -72,7 +72,7 @@ json
 Route: POST /api/auth/login
 Request Body:
 json
-Copy code
+
 {
   "email": "web@programming-hero.com",
   "password": "programming-hero"
