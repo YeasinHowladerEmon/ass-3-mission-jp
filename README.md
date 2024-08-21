@@ -38,9 +38,12 @@ yarn start
 The server should now be running on http://localhost:3000.
 
 API Endpoints
+
 User Routes
+
 1. User Sign Up
 Route: POST /api/auth/signup
+
 Request Body:
 json
 
