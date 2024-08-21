@@ -88,6 +88,7 @@ const DeleteBooking = async (id: string) => {
   return result;
 };
 
+
 const getBookingByUser = async (
   users: JwtPayload
 ): Promise<null | IBooking[]> => {
