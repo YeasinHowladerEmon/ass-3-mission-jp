@@ -45,7 +45,6 @@ User Routes
 Route: POST /api/auth/signup
 
 Request Body:
-json
 
 {
   "name": "Programming Hero",
@@ -55,8 +54,8 @@ json
   "role": "admin", // or 'user'
   "address": "Level-4, 34, Awal Centre, Banani, Dhaka"
 }
+
 Response:
-json
 
 {
   "success": true,
@@ -72,16 +71,17 @@ json
   }
 }
 2. User Login
+
 Route: POST /api/auth/login
+
 Request Body:
-json
 
 {
   "email": "web@programming-hero.com",
   "password": "programming-hero"
 }
+
 Response:
-json
 
 {
   "success": true,
@@ -97,16 +97,19 @@ json
     "address": "Level-4, 34, Awal Centre, Banani, Dhaka"
   }
 }
+
 Facility Routes
+
 3. Create a Facility (Admin Only)
+   
 Route: POST /api/facility
+
 Headers:
-json
 {
   "Authorization": "Bearer JWT_TOKEN"
 }
+
 Request Body:
-json
 
 {
   "name": "Tennis Court",
@@ -114,8 +117,8 @@ json
   "pricePerHour": 30,
   "location": "456 Sports Ave, Springfield"
 }
+
 Response:
-json
 
 {
   "success": true,
@@ -130,26 +133,28 @@ json
     "isDeleted": false
   }
 }
+
 4. Update a Facility (Admin Only)
+   
 Route: PUT /api/facility/:id
+
 Headers:
-json
 
 {
   "Authorization": "Bearer JWT_TOKEN"
 }
+
 Request Body:
-json
-Copy code
+
 {
   "name": "Updated Tennis Court",
   "description": "Updated outdoor tennis court with synthetic surface.",
   "pricePerHour": 35,
   "location": "789 Sports Ave, Springfield"
 }
+
 Response:
-json
-Copy code
+
 {
   "success": true,
   "statusCode": 200,
@@ -163,16 +168,18 @@ Copy code
     "isDeleted": false
   }
 }
+
 5. Delete a Facility - Soft Delete (Admin Only)
+   
 Route: DELETE /api/facility/:id
+
 Headers:
-json
 
 {
   "Authorization": "Bearer JWT_TOKEN"
 }
+
 Response:
-json
 
 {
   "success": true,
@@ -187,11 +194,13 @@ json
     "isDeleted": true
   }
 }
+
 6. Get All Facilities
+   
 Route: GET /api/facility
+
 Response:
-json
-Copy code
+
 {
   "success": true,
   "statusCode": 200,
@@ -207,14 +216,18 @@ Copy code
     }
   ]
 }
+
 Booking Routes
-7. Check Availability
+
+8. Check Availability
+   
 Route: GET /api/check-availability
+
 or 
+
 GET /api/check-availability?date=2024-06-15
 
 Response:
-json
 
 {
   "success": true,
@@ -231,16 +244,17 @@ json
     }
   ]
 }
-8. Create a Booking (User Only)
+9. Create a Booking (User Only)
+
 Route: POST /api/bookings
+
 Headers:
-json
 
 {
   "Authorization": "Bearer JWT_TOKEN"
 }
+
 Request Body:
-json
 
 {
   "facility": "60d9c4e4f3b4b544b8b8d1c5",
@@ -248,8 +262,9 @@ json
   "startTime": "10:00 AM",
   "endTime": "01:00 PM"
 }
+
 Response:
-json
+
 
 {
   "success": true,
@@ -266,16 +281,17 @@ json
     "isBooked": "confirmed"
   }
 }
-9. View All Bookings (Admin Only)
+10. View All Bookings (Admin Only)
+
 Route: GET /api/bookings
+
 Headers:
-json
-Copy code
+
 {
   "Authorization": "Bearer JWT_TOKEN"
 }
+
 Response:
-json
 
 {
   "success": true,
@@ -300,16 +316,18 @@ json
     }
   ]
 }
-10. View Bookings for a Specific User (User Only)
+
+11. View Bookings for a Specific User (User Only)
+    
 Route: GET /api/bookings/user
+
 Headers:
-json
 
 {
   "Authorization": "Bearer JWT_TOKEN"
 }
+
 Response:
-json
 
 {
   "success": true,
