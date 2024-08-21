@@ -31,10 +31,10 @@ const getCheckAvailability = catchAsync(
   }
 );
 
-const getSingleBooking = catchAsync(
+const getBookingByUser = catchAsync(
   async (req: Request, res: Response): Promise<void> => {
-    const id = req.params.id;
-    const result = await BookingService.getSingleBooking(id);
+    const user = req.user;
+    const result = await BookingService.getBookingByUser(user);
     sendResponse(res, {
       statusCode: httpStatus.OK,
       success: true,
@@ -91,5 +91,5 @@ export const BookingController = {
   deleteBooking,
   getAllBooking,
   getCheckAvailability,
-  getSingleBooking
+  getBookingByUser
 };

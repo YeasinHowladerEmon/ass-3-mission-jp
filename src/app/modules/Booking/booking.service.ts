@@ -88,10 +88,12 @@ const DeleteBooking = async (id: string) => {
   return result;
 };
 
-const getSingleBooking = async (id: string): Promise<null | IBooking> => {
-  const result = await Booking.findById(id)
-    .populate("facility")
-    .populate("user");
+const getBookingByUser = async (
+  users: JwtPayload
+): Promise<null | IBooking[]> => {
+  const result = await Booking.find({ user: users.userId }).populate(
+    "facility"
+  );
   if (!result) {
     throw new ApiError(httpStatus.NOT_FOUND, "Booking not Found");
   }
@@ -166,5 +168,5 @@ export const BookingService = {
   DeleteBooking,
   getAllBooking,
   getCheckAvailability,
-  getSingleBooking
+  getBookingByUser
 };

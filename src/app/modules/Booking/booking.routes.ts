@@ -20,7 +20,7 @@ routes.post(
   BookingController.createBooking
 );
 
-routes.get('/:id', authGuard(USER_ROLE.user), BookingController.getSingleBooking);
+routes.get('/user', authGuard(USER_ROLE.user), BookingController.getBookingByUser);
 
 routes.delete('/:id', authGuard(USER_ROLE.user), BookingController.deleteBooking);
 
